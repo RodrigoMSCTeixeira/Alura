@@ -15,23 +15,23 @@ const Time = ({
   corSecundaria,
   nome,
 }: TimeProps) => {
-  return (
-    colaboradores.length > 0 && (
-      <section className="time" style={{ backgroundColor: corSecundaria }}>
-        <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
-        <div className="colaboradores">
-          {colaboradores.map((colaborador) => (
-            <Colaborador
-              corDeFundo={corPrimaria}
-              key={colaborador.nome}
-              nome={colaborador.nome}
-              cargo={colaborador.cargo}
-              imagem={colaborador.imagem}
-            />
-          ))}
-        </div>
-      </section>
-    )
+  return colaboradores.length > 0 ? (
+    <section className="time" style={{ backgroundColor: corSecundaria }}>
+      <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
+      <div className="colaboradores">
+        {colaboradores.map((colaborador) => (
+          <Colaborador
+            corDeFundo={corPrimaria}
+            key={colaborador.nome}
+            nome={colaborador.nome}
+            cargo={colaborador.cargo}
+            imagem={colaborador.imagem}
+          />
+        ))}
+      </div>
+    </section>
+  ) : (
+    <React.Fragment></React.Fragment>
   );
 };
 
