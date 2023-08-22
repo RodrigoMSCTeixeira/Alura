@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Formulario from "./components/Formulario/index.js";
-import Time from "./components/Time/index.js";
+import Formulario from "./components/Formulario/index";
+import Time from "./components/Time/index";
 import Banner from "./components/Banner/index";
 import { IColaborador } from "./shared/interfaces/IColaborador.js";
 

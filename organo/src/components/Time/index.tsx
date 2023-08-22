@@ -1,3 +1,4 @@
+import React from "react";
 import { IColaborador } from "../../shared/interfaces/IColaborador.js";
 import Colaborador from "../Colaborador/index";
 import "./Time.css";
@@ -26,6 +27,7 @@ const Time = ({
             nome={colaborador.nome}
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
+            data={colaborador.data}
           />
         ))}
       </div>

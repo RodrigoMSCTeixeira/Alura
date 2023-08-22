@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Botao from "../Botao/index";
 import CampoTexto from "../CampoTexto/index";
-import ListaSuspensa from "../ListaSuspensa/index.js";
+import ListaSuspensa from "../ListaSuspensa/index";
 import "./Formulario.css";
 import { IColaborador } from "../../shared/interfaces/IColaborador";
 
@@ -25,6 +25,7 @@ const Formulario = (props: FormularioProps) => {
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
+  const [data, setData] = useState("");
 
   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
@@ -33,16 +34,18 @@ const Formulario = (props: FormularioProps) => {
       cargo,
       imagem,
       time,
+      data,
     });
     setNome("");
     setCargo("");
     setImagem("");
     setTime("");
+    setData("");
   };
 
   return (
     <section className="formulario">
-      <form onSubmit={aoSalvar}>
+      <form onSubmit={(evento) => aoSalvar(evento)}>
         <h2>Preencha os dados para criar o cardo do colaborador</h2>
         <CampoTexto
           obrigatorio={true}
@@ -63,6 +66,13 @@ const Formulario = (props: FormularioProps) => {
           placeholder="Digite o endereço da imagem"
           valor={imagem}
           aoAlterado={(valor) => setImagem(valor)}
+        />
+        <CampoTexto
+          label="Data de entrada no time"
+          placeholder=""
+          valor={data}
+          aoAlterado={(valor) => setData(valor)}
+          tipo="date"
         />
         <ListaSuspensa
           obrigatorio={true}
