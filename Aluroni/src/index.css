@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+
+body {
+  background-color: #f6f6f6;
+}
+
+* {
+  /*
+  Considera o tamanho do nosso box, do nosso container, 
+  considerando as bordas, o padding, tudo que estiver 
+  dentro dele. Então se colocarmos um padding, alguma coisa, 
+  não vai dar nenhum problema. E assim fica mais fácil de trabalhar.
+  */
+  box-sizing: border-box;
+  font-family: "Italiana", serif;
+}
