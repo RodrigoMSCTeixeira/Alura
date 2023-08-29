@@ -1,0 +1,16 @@
+/* Um módulo CSS é um arquivo CSS 
+no qual todos os nomes de classe têm 
+escopo local por padrão. Dessa maneira, 
+você pode reutilizar nomes de classes 
+em arquivos diferentes sem acontecer conflitos. 
+Por exemplo: eu posso usar a classe container 
+em vários componentes e pra cada container ter 
+um estilo diferente. */
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1em 20em;
+  background-color: var(--preto);
+}
