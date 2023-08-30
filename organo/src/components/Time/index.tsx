@@ -8,6 +8,7 @@ interface TimeProps {
   corSecundaria: string;
   nome: string;
   colaboradores: IColaborador[];
+  aoDeletar: () => void;
 }
 
 const Time = ({
@@ -15,21 +16,25 @@ const Time = ({
   corPrimaria,
   corSecundaria,
   nome,
+  aoDeletar,
 }: TimeProps) => {
   return colaboradores.length > 0 ? (
     <section className="time" style={{ backgroundColor: corSecundaria }}>
       <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
       <div className="colaboradores">
-        {colaboradores.map((colaborador) => (
-          <Colaborador
-            corDeFundo={corPrimaria}
-            key={colaborador.nome}
-            nome={colaborador.nome}
-            cargo={colaborador.cargo}
-            imagem={colaborador.imagem}
-            data={colaborador.data}
-          />
-        ))}
+        {colaboradores.map((colaborador) => {
+          return (
+            <Colaborador
+              corDeFundo={corPrimaria}
+              key={colaborador.nome}
+              nome={colaborador.nome}
+              cargo={colaborador.cargo}
+              imagem={colaborador.imagem}
+              data={colaborador.data}
+              aoDeletar={aoDeletar}
+            />
+          );
+        })}
       </div>
     </section>
   ) : (

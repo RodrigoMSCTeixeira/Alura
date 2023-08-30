@@ -1,25 +1,24 @@
-import Cabecalho from "components/Cabecalho";
-import Container from "components/Container";
-import Rodape from "components/Rodape";
-import FavoritosProvider from "contextos/Favoritos";
 import Inicio from "pages/Inicio";
-import Favoritos from "pages/favoritos";
+import Favoritos from "pages/Favoritos";
+import Player from "pages/Player";
+import NaoEncontrado from "pages/NaoEncontrado/NaoEncontrado";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PaginaBase from "pages/PaginaBase";
+
+//Nested Routes
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <Cabecalho />
-      <Container>
-        <FavoritosProvider>
-          <Routes>
-            <Route path="/" element={<Inicio />}></Route>
-            <Route path="/favoritos" element={<Favoritos />}></Route>
-          </Routes>
-        </FavoritosProvider>
-      </Container>
-      <Rodape />
-    </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PaginaBase />}>
+          <Route index element={<Inicio />}></Route>
+          <Route path="favoritos" element={<Favoritos />}></Route>
+          <Route path=":id" element={<Player />}></Route>
+          <Route path="*" element={<NaoEncontrado />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter >
   );
 }
 
