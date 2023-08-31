@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import "./CampoTexto.css";
+import "./Campo.css";
 
-interface CampoTextoProps {
+interface CampoProps {
   placeholder: string;
   aoAlterado: (valor: string) => void;
   label: string;
   valor: string;
   obrigatorio?: boolean;
-  tipo?: "text" | "password" | "date" | "email" | "number";
+  tipo?: "text" | "password" | "date" | "email" | "number" | "color";
 }
 
-export const CampoTexto = ({
+export const Campo = ({
   aoAlterado,
   label,
   placeholder,
   obrigatorio = false,
   tipo = "text",
-}: CampoTextoProps) => {
+}: CampoProps) => {
   const placeholderModificada = `${placeholder}...`;
 
   //let valor = "";
@@ -31,7 +31,7 @@ export const CampoTexto = ({
   };
 
   return (
-    <div className="campo-texto">
+    <div className={`campo campo-${tipo}`}>
       <label>{label}</label>
       <input
         value={valor}

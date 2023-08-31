@@ -1,31 +1,51 @@
 import { IColaborador } from "../../shared/interfaces/IColaborador";
+import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import "./Colaborador.css";
 
-interface ColaboradorProps extends IColaborador {
+interface ColaboradorProps {
   corDeFundo: string;
-  aoDeletar: () => void;
+  colaborador: IColaborador;
+  aoDeletar: (id: string) => void;
+  aoFavoritar: (id: string) => void;
 }
 
 const Colaborador = ({
-  nome,
-  cargo,
-  imagem,
+  colaborador,
   corDeFundo,
-  data,
+  // data,
   aoDeletar,
+  aoFavoritar,
 }: ColaboradorProps) => {
+  function favoritar() {
+    aoFavoritar(colaborador.id);
+  }
+
+  const propsFavorito = {
+    size: 25,
+    onClick: favoritar,
+  };
+
   return (
     <div className="colaborador">
-      <div className="deletar" onClick={aoDeletar}>
-        Deletar
-      </div>
+      <AiFillCloseCircle
+        size={25}
+        className="deletar"
+        onClick={() => aoDeletar(colaborador.id)}
+      />
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
-        <img src={imagem} alt={nome} />
+        <img src={colaborador.imagem} alt={colaborador.nome} />
       </div>
       <div className="rodape">
-        <h4>{nome}</h4>
-        <h5>{cargo}</h5>
-        <h5>{new Date(data).toLocaleDateString()}</h5>
+        <h4>{colaborador.nome}</h4>
+        <h5>{colaborador.cargo}</h5>
+        <div className="favoritar">
+          {colaborador.favorito ? (
+            <AiFillHeart {...propsFavorito} color="#ff0000" />
+          ) : (
+            <AiOutlineHeart {...propsFavorito} />
+          )}
+        </div>
+        {/* <h5>{new Date(data).toLocaleDateString()}</h5> */}
       </div>
     </div>
   );
