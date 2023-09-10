@@ -1,23 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-
 body {
-  background-color: #f6f6f6;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  /*
-  Considera o tamanho do nosso box, do nosso container, 
-  considerando as bordas, o padding, tudo que estiver 
-  dentro dele. Então se colocarmos um padding, alguma coisa, 
-  não vai dar nenhum problema. E assim fica mais fácil de trabalhar.
-  */
-  box-sizing: border-box;
-  font-family: "Italiana", serif;
-}
-
-#root > main.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
