@@ -1,26 +1,26 @@
-import { Suspense, useEffect, useState } from "react";
-import useListaDeMenus from "../../state/hooks/useListaDeMenus";
+import { useEffect } from "react";
+import useListaDeMenusZu from "../../store/useListaDeMenusZu";
 
 interface Props {
   nomeDoMenu: string;
 }
 
-function Menu({ nomeDoMenu }: Props) {
-  const { name } = useListaDeMenus(nomeDoMenu);
-  const [nome, setNome] = useState("State");
+const Menu = ({ nomeDoMenu }: Props) => {
+  const { menus, getMenu } = useListaDeMenusZu();
 
   useEffect(() => {
-    console.log(nomeDoMenu);
-  }, []);
+    getMenu(nomeDoMenu);
+  }, [nomeDoMenu]);
 
+  console.log(menus);
   return (
     <div>
-      <h1>Testando Requisição</h1>
+      <h1>{menus.name}</h1>
       <div>
-        <h1>{nome}</h1>
+        <h1></h1>
       </div>
     </div>
   );
-}
+};
 
 export default Menu;

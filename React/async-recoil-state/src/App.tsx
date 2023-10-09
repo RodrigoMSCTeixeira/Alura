@@ -1,20 +1,20 @@
-import { Suspense } from "react";
 import "./App.css";
-import { RecoilRoot } from "recoil";
-
 import Menu from "./components/Menu";
+import Home from "./pages/Home";
+import UserForm from "./pages/UserForm";
 
 function App() {
   return (
     <>
-      <RecoilRoot>
-        <Suspense fallback="Está Carregando">
-          <div className="App">
-            <h1>Página de Teste</h1>
-            <Menu nomeDoMenu="institucionais" />
-          </div>
-        </Suspense>
-      </RecoilRoot>
+      <div className="App">
+        <Menu nomeDoMenu="institucionais" />
+        <Menu nomeDoMenu="transparencia" />
+        <Menu nomeDoMenu="documentos-eletronicos" />
+        <Menu nomeDoMenu="legislacao-e-atos" />
+        <Menu nomeDoMenu="escola-fazendaria" />
+        <Home />
+        <UserForm />
+      </div>
     </>
   );
 }
