@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="086b01ca-daef-4f9f-8541-50f9cef57b42" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screenmatch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/br/com/alura/principal/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/.vscode/tasks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/cabecalho/cabecalho.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/cabecalho/cabecalho.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/cabecalho/cabecalho.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/cabecalho/cabecalho.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/pensamentos/criar-pensamento/criar-pensamento.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/pensamentos/criar-pensamento/criar-pensamento.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/pensamentos/criar-pensamento/criar-pensamento.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/pensamentos/criar-pensamento/criar-pensamento.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/rodape/rodape.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/rodape/rodape.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/rodape/rodape.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/app/components/rodape/rodape.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/background-completo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/computador-cabecalho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/fundo-cabecalho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/fundo-rodape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/icone-editar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/icone-excluir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/logo-alura.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/logo-memoteca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/modelo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/modelo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/assets/imagens/modelo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Angular/memoteca/tsconfig.spec.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ZU954mL3qL3y1UQg1VNd0J7hfy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Principal.executor": "Run",
+    "Application.PrincipalComListas.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "development",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/rodrigoteixeira/Desktop/Alura/Java/screenmatch/src/Main.java"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-93b19daf" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="086b01ca-daef-4f9f-8541-50f9cef57b42" name="Changes" comment="" />
+      <created>1702465614044</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702465614044</updated>
+    </task>
+    <servers />
+  </component>
+</project>
