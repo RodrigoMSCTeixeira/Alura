@@ -1,71 +1,109 @@
-import livro from "../models/Livro.js";
-import { autor } from "../models/Autor.js";
+import { livro, autor } from "../models/index.js";
+import NaoEncontrado from "../erros/NaoEncontrado.js";
 
 class LivroController {
-  static async listarLivros(req, res) {
+  static async listarLivros(req, res, next) {
     try {
-      const listaLivros = await livro.find({});
-      res.status(200).json(listaLivros);
+      const buscaLivros = livro.find();
+
+      req.resultado = buscaLivros;
+
+      next();
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha na requisição` });
+      next(erro);
     }
   }
 
-  static async listarLivroPorId(req, res) {
+  static async listarLivroPorId(req, res, next) {
     try {
       const id = req.params.id;
       const livroEncontrado = await livro.findById(id);
       res.status(200).json(livroEncontrado);
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha na requisição do livro` });
+      next(new NaoEncontrado("Id do livro não localizado."));
     }
   }
 
-  static async cadastrarLivro(req, res) {
+  static async cadastrarLivro(req, res, next) {
     const novoLivro = req.body;
     try {
       const autorEncontrado = await autor.findById(novoLivro.autor);
       const livroCompleto = {
-        ...novoLivro, autor: { ...autorEncontrado._doc }
-      }
-      const livroCriado = await livro.create(livroCompleto)
-      res.status(201).json({ message: "criado com sucesso", livro: livroCriado });
+        ...novoLivro,
+        autor: { ...autorEncontrado._doc },
+      };
+      const livroCriado = await livro.create(livroCompleto);
+      res
+        .status(201)
+        .json({ message: "criado com sucesso", livro: livroCriado });
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha ao cadastrar livro` });
+      next(erro);
     }
-
   }
 
-  static async atualizarLivro(req, res) {
+  static async atualizarLivro(req, res, next) {
     try {
       const id = req.params.id;
       await livro.findByIdAndUpdate(id, req.body);
       res.status(200).json({ message: "livro atualizado" });
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha na atualização do livro` });
+      next(new NaoEncontrado("Id do livro não localizado."));
     }
   }
 
-  static async delelarLivro(req, res) {
+  static async delelarLivro(req, res, next) {
     try {
       const id = req.params.id;
       await livro.findByIdAndDelete(id);
       res.status(200).json({ message: "livro deletado" });
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha ao deletar o livro` });
+      next(new NaoEncontrado("Id do livro não localizado."));
     }
   }
 
-  static async listarLivrosPorEditora(req, res) {
-    const editora = req.query.editora;
-
+  static async listarLivrosPorFiltro(req, res, next) {
     try {
-      const livrosPorEditora = await livro.find({ editora: editora });
-      res.status(200).json(livrosPorEditora);
+      const busca = processaBusca(req.query);
+
+      if (busca !== null) {
+        const livrosResultado = livro.find(busca).populate("autor");
+
+        req.resultado = livrosResultado;
+
+        next();
+      }
     } catch (erro) {
-      res.status(500).json({ message: `${erro.message} - falha na busca` });
+      next(erro);
     }
   }
-};
+}
+
+async function processaBusca(parametros) {
+  const { editora, titulo, minPaginas, maxPaginas, nomeAutor } = parametros;
+
+  //const regex = new RegExp(titulo, "i");
+  let busca = {};
+
+  if (editora) busca.editora = editora;
+  if (titulo) busca.titulo = { $regex: titulo, $options: "i" };
+
+  if (minPaginas || maxPaginas) busca.paginas = {};
+
+  //gte = Greater than or equal = maior ou igual que
+  if (minPaginas) busca.paginas.$gte = minPaginas;
+  //lte = Less than or equal = menor ou igual que
+  if (maxPaginas) busca.paginas.$lte = maxPaginas;
+
+  if (nomeAutor) {
+    const autor = await autor.findOne({ nomeAutor: nomeAutor });
+
+    if (autor !== null) {
+      busca.autor = autor._id;
+    } else {
+      busca = null;
+    }
+  }
+  return busca;
+}
 
 export default LivroController;
