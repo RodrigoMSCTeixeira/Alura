@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .progress-container {
+        width: 100%;
+        background-color: #f0f0f0;
+      }
+
+      .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: #4caf50;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>API Data Loading with Progress Bar</h1>
+    <div class="progress-container">
+      <div class="progress-bar" id="myProgressBar"></div>
+    </div>
+
+    <script>
+      function updateProgressBar(progress) {
+        var progressBar = document.getElementById("myProgressBar");
+        console.log(progress);
+        progressBar.style.width = Math.min(progress, 100) + "%";
+      }
+
+      function loadData() {
+        var url = "https://jsonplaceholder.typicode.com/todos"; // Replace with your API endpoint
+
+        fetch(url)
+          .then((response) => {
+            var loadedDataSize = 0;
+
+            // Create a ReadableStream to read the response incrementally
+            var reader = response.body.getReader();
+
+            // Function to recursively read chunks of data and update the progress bar
+            function readChunk() {
+              reader.read().then(({ done, value }) => {
+                if (done) {
+                  console.log("Data loading complete");
+                  return;
+                }
+
+                // Update loaded data size
+                loadedDataSize += value.byteLength;
+
+                // Update progress bar (just to indicate data is being received)
+                var progress = (loadedDataSize / 1000) * 100; // Assuming total size of 1000 bytes for demonstration
+                updateProgressBar(progress);
+
+                // Read next chunk
+                readChunk();
+              });
+            }
+
+            // Start reading chunks
+            readChunk();
+          })
+          .catch((error) => {
+            console.error("Error loading data:", error);
+          });
+      }
+
+      // Call loadData function to start loading data
+      loadData();
+    </script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
